@@ -1,0 +1,6 @@
+config:
+  calendars:
+    - name: 'pwr'
+      address: 'http://localhost:1080/calendars'
+      request: '[{"operation": "shift","spec": {"studentNumber": "indeks","startDate": "date.start","endDate": "date.end"}}]'
+      response: '[{"operation": "shift","spec": {"name": "name","class": "classroom","lecturer": "lecturer","date": {"start": "startDateTime","end": "endDateTime"},"event": "eventType"}}]'
