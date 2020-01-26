@@ -4,3 +4,28 @@ config:
       address: 'http://localhost:1080/calendars'
       request: '[{"operation": "shift","spec": {"studentNumber": "indeks","startDate": "date.start","endDate": "date.end"}}]'
       response: '[{"operation": "shift","spec": {"name": "name","class": "classroom","lecturer": "lecturer","date": {"start": "startDateTime","end": "endDateTime"},"event": "eventType"}}]'
+  grades:
+    - name: 'pwr'
+      address: 'http://localhost:1080/grades'
+      request:
+      response:
+  messages:
+    - name: 'pwr'
+      address: 'http://localhost:1080/messages'
+      request:
+      response:
+  payments:
+    - name: 'pwr'
+      address: 'http://localhost:1080/payments'
+      request:
+      response: '[{"operation": "shift","spec": {"payments": {"*": {"value": "payments.[&1].amount","desc": "payments.[&1].description","issued": "payments.[&1].issueDate","*": "payments.[&1].&"}}}}]'
+  profiles:
+    - name: 'pwr'
+      address: 'http://localhost:1080/user'
+      request:
+      response: '[{"operation": "shift","spec": {"name": "fullName","index": "studentNumber","faculty": "faculty","subject": "subject","degree": "degree","spec": "specialization"}}]'
+  login:
+    - name: 'pwr'
+      address: 'http://localhost:1080/login'
+      request: '[{"operation": "shift","spec": {"username": "user","password": "&"}}]'
+      response: '[{"operation": "default","spec": {}}]'
