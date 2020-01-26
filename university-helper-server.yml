@@ -22,7 +22,7 @@ config:
   profiles:
     - name: 'pwr'
       address: 'http://localhost:1080/user'
-      request:
+      request: '[{"operation": "shift","spec": {"username": "user"}}]'
       response: '[{"operation": "shift","spec": {"name": "fullName","index": "studentNumber","faculty": "faculty","subject": "subject","degree": "degree","spec": "specialization"}}]'
   login:
     - name: 'pwr'
