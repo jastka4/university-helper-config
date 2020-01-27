@@ -14,11 +14,11 @@ config:
       address: 'http://localhost:1080/messages'
       request:
       response:
-  payments:
+  finances:
     - name: 'pwr'
       address: 'http://localhost:1080/payments'
-      request:
-      response: '[{"operation": "shift","spec": {"payments": {"*": {"value": "payments.[&1].amount","desc": "payments.[&1].description","issued": "payments.[&1].issueDate","*": "payments.[&1].&"}}}}]'
+      request: '[{"operation": "shift","spec": {"username": "user"}}]'
+      response: '[{"operation": "shift","spec": {"payments": {"*": {"amount": "payments.[&1].value","desc": "payments.[&1].description","issued": "payments.[&1].issueDate","*": "payments.[&1].&"}}}}]'
   profiles:
     - name: 'pwr'
       address: 'http://localhost:1080/user'
