@@ -2,8 +2,8 @@ config:
   calendars:
     - name: 'pwr'
       address: 'http://localhost:1080/calendars'
-      request: '[{"operation": "shift","spec": {"studentNumber": "indeks","startDate": "date.start","endDate": "date.end"}}]'
-      response: '[{"operation": "shift","spec": {"name": "name","class": "classroom","lecturer": "lecturer","date": {"start": "startDateTime","end": "endDateTime"},"event": "eventType"}}]'
+      request: '[{"operation": "shift","spec": {"username": "user","studentNumber": "indeks","startDate": "date.start","endDate": "date.end"}}]'
+      response: '[{"operation": "shift","spec": {"events": {"*": {"eventName": "events.[&1].name","room": "events.[&1].classroom","type": "events.[&1].eventType","date": {"start": "events.[&2].startDateTime","end": "events.[&2].endDateTime"},"*": "events.[&1].&"}}}}]'
   grades:
     - name: 'pwr'
       address: 'http://localhost:1080/grades'
