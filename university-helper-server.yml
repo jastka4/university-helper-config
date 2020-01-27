@@ -7,8 +7,8 @@ config:
   grades:
     - name: 'pwr'
       address: 'http://localhost:1080/grades'
-      request:
-      response:
+      request: '[{"operation": "shift","spec": {"username": "user"}}]'
+      response: '[{"operation": "shift","spec": {"grades": {"*": {"type": "grades.[&1].eventType","*": "grades.[&1].&"}}}}]'
   messages:
     - name: 'pwr'
       address: 'http://localhost:1080/messages'
