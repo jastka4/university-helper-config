@@ -12,8 +12,8 @@ config:
   messages:
     - name: 'pwr'
       address: 'http://localhost:1080/messages'
-      request:
-      response:
+      request: '[{"operation": "shift","spec": {"username": "user"}}]'
+      response: '[{"operation": "shift","spec": {"messages": {"*": {"message": "messages.[&1].content","*": "messages.[&1].&"}}}}]'
   finances:
     - name: 'pwr'
       address: 'http://localhost:1080/payments'
